@@ -1,0 +1,46 @@
+package com.example.sundaay;
+
+import android.media.Image;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.Editable;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity  {
+    int a=0;
+    int c=0;
+Button b;
+TextView t;
+EditText e1,e2;//Declearing edit text and button 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        e1=(EditText)findViewById(R.id.e1);
+        e2=(EditText)findViewById(R.id.e2);
+
+        b = (Button)findViewById(R.id.b1);//INITIALIZATION
+        t =(TextView) findViewById(R.id.textView);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                a =Integer.parseInt(e1.getText()+"");//taking input from the edit text 
+                c = Integer.parseInt(e2.getText()+"");//taking input
+                int d =a+c;//adding
+                t.setText(""+d);//displaying answer by setting the edit text
+
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        return;
+    }
+}
