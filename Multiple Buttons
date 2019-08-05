@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    int a=0;
-    int c=0;
 Button b1,b2,b3;
 EditText e1;
     @Override
@@ -27,12 +25,13 @@ EditText e1;
         b1.setOnClickListener(this);
         b2.setOnClickListener(this);
         b3.setOnClickListener(this);
-
+        //multiple button Initialisation
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+///we are using the ID of each button with v so we can acces each ID when we want to accses-//
 
             case R.id.b1:
                 e1.setText("b1");
@@ -50,4 +49,6 @@ EditText e1;
                 break; }
 
     }
+    //As you can see we have used the varoius button and there id to work seperately you can use multiple button without using id too but
+    // the code line will increase and you will have to call onClickListener for every time whn you have to use buttons
 }
